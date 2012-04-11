@@ -1,0 +1,22 @@
+<ui:composition
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+
+
+        <h:panelGrid columns="2">
+            <f:facet name="header">#{operationType}</f:facet>
+            <h:outputLabel value="Name"></h:outputLabel>
+            <h:inputText value="#{taskController.instance.name}"/>
+            <h:outputLabel value="Description"></h:outputLabel>
+            <h:inputText value="#{taskController.instance.description}"/>
+            <h:outputLabel value="Priority"></h:outputLabel>
+            <h:inputText value="#{taskController.instance.priority}"/>
+        </h:panelGrid>
+
+
+
+ </ui:composition>
+

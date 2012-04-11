@@ -1,0 +1,33 @@
+<ui:composition
+      xmlns="http://www.w3.org/1999/xhtml"
+      template="/layout/template.xhtml"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+
+    <ui:define name="body">
+
+        <h:form id="loginform" rendered="#{not authenticator.loggedIn}" >
+
+            
+
+
+            <h:panelGrid border="1" columns="2">
+                <f:facet name="header">Enter your credential:</f:facet>
+                <h:outputLabel value="User Name"/>
+                <h:inputText value="#{authenticator.name}"/>
+
+                <h:outputLabel value="Password"/>
+                <h:inputSecret value="#{authenticator.password}"/>
+
+            </h:panelGrid>
+
+            <h:commandButton action="#{authenticator.login()}" value="Submit"/>
+        </h:form>
+
+        <h1><h:outputLabel  value="You are logged in!" rendered="#{authenticator.loggedIn}"></h:outputLabel></h1>
+
+    </ui:define>
+</ui:composition>

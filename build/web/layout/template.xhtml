@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Shiro Test</title>
+    </h:head>
+    <h:body>
+        <f:view>
+        <h:form>
+        <p:menubar>
+            <p:menuitem url="/index.jsf" value="Home">
+            </p:menuitem>
+     
+
+            <p:menuitem url="/task/list.jsf" value="Tasks">
+            </p:menuitem>
+
+            <p:menuitem action="#{authenticator.logout()}" value="Logout" rendered="#{authenticator.loggedIn}" />
+
+            <p:menuitem url="/login.jsf" value="Login" rendered="#{not authenticator.loggedIn}"/>
+        </p:menubar>
+       </h:form>
+
+            <h:messages globalOnly="true" ></h:messages>
+
+        <ui:insert name="body">
+            
+        </ui:insert>
+
+        </f:view>
+    </h:body>
+</html>
+

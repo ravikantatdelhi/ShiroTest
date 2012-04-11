@@ -1,0 +1,32 @@
+<ui:composition
+      xmlns="http://www.w3.org/1999/xhtml"
+      template="/layout/template.xhtml"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html" >
+
+
+    <ui:define name="body">
+          <h:form>
+            <h:commandLink action="#{taskController.addNewTask()}" value="Add Task"/>
+        <table border="1">
+            <tr><td>Name</td> <td>Description</td> <td>Priority</td> <td>Action</td></tr>
+             <ui:repeat var="task" value="#{taskController.instanceList}" >
+                 <tr>
+                     <td><h:outputText value="#{task.name}"/></td>
+                     <td><h:outputText value="#{task.description}"/></td>   
+                     <td><h:outputText value="#{task.priority}"/></td>
+                     <td>
+                     <!-- ID Dircetly used (Since Assuming it is not a concern here)-->
+                     <h:commandLink action="#{taskController.editTask(task.taskId)}" value="Edit"/>
+                     <h:outputText value=" "/>
+                     <h:commandLink action="#{taskController.deleteTask(task.taskId)}" value="Delete"/>
+                     </td>
+                 </tr>
+
+            </ui:repeat>
+         </table>
+            </h:form>
+    </ui:define>
+</ui:composition>
