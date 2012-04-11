@@ -1,0 +1,7 @@
+This is a Shiro Demo Project
+It is netbeans project 7.1 verison used.
+One should use glassfish3.1 target environment,
+Mysql is used kindly run the db/*Sql script to create sample database.
+
+Any comments Invited!!
+
