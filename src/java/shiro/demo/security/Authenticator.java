@@ -25,6 +25,7 @@ public class Authenticator implements  Serializable{
     private String password;
 
     public String getName() {
+       
         return name;
     }
 
