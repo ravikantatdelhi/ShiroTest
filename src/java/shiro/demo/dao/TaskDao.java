@@ -6,12 +6,10 @@
 package shiro.demo.dao;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import org.apache.shiro.SecurityUtils;
 import shiro.demo.model.Task;
 
 /**
